@@ -28,7 +28,6 @@ export const loadUser = () => (dispatch, getState) => {
 
   // If token, add to headers
   if (token) {
-    console.log("token =" + token);
     config.headers["x-auth-token"] = token;
   }
   axios
