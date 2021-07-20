@@ -29,21 +29,22 @@ export const loadUser = () => (dispatch, getState) => {
   // If token, add to headers
   if (token) {
     config.headers["x-auth-token"] = token;
-    axios
-      .get("/users", config)
-      .then((res) =>
-        dispatch({
-          type: USER_LOADED,
-          payload: res.data.user,
-        })
-      )
-      .catch((err) => {
-        dispatch(returnErrors(err.response.data.msg, err.response.status));
-        dispatch({
-          type: AUTH_ERROR,
-        });
-      });
   }
+  axios
+    .get("/users", config)
+    .then((res) => {
+      console.log(res.data);
+      dispatch({
+        type: USER_LOADED,
+        payload: res.data.user,
+      });
+    })
+    .catch((err) => {
+      dispatch(returnErrors(err.response.data.msg, err.response.status));
+      dispatch({
+        type: AUTH_ERROR,
+      });
+    });
 };
 
 // Register User
