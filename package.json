@@ -48,5 +48,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://node-express-env.eba-ewqgnqvx.us-west-1.elasticbeanstalk.com/"
+  "proxy": "http://destination-finder-server-dev.us-west-1.elasticbeanstalk.com/"
 }
