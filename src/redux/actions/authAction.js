@@ -33,7 +33,6 @@ export const loadUser = () => (dispatch, getState) => {
   axios
     .get("https://destination-finder-server.eba-mr8nhntj.us-west-1.elasticbeanstalk.com/users", config)
     .then((res) => {
-      console.log(res);
       dispatch({
         type: USER_LOADED,
         payload: res.data.user,
