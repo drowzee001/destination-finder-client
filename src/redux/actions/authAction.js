@@ -28,12 +28,13 @@ export const loadUser = () => (dispatch, getState) => {
 
   // If token, add to headers
   if (token) {
+    console.log("token" = token);
     config.headers["x-auth-token"] = token;
   }
   axios
     .get("/users", config)
     .then((res) => {
-      console.log(res.data);
+      console.log(res);
       dispatch({
         type: USER_LOADED,
         payload: res.data.user,
