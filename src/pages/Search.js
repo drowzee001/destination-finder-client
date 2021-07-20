@@ -73,6 +73,9 @@ function Search() {
   const autoCompleteRef = useRef(null);
 
   useEffect(() => {
+    console.log(
+      `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_API_KEY}&libraries=places`
+    );
     if (auth.isLoading === false) {
       loadScript(
         `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_API_KEY}&libraries=places`,
