@@ -31,7 +31,7 @@ export const loadUser = () => (dispatch, getState) => {
     config.headers["x-auth-token"] = token;
   }
   axios
-    .get("http://destination-finder-server.eba-mr8nhntj.us-west-1.elasticbeanstalk.com/users", config)
+    .get("https://destination-finder-server.eba-mr8nhntj.us-west-1.elasticbeanstalk.com/users", config)
     .then((res) => {
       console.log(res);
       dispatch({
@@ -62,7 +62,7 @@ export const register =
     const body = JSON.stringify({ firstName, lastName, email, password });
 
     axios
-      .post("http://destination-finder-server.eba-mr8nhntj.us-west-1.elasticbeanstalk.com/users/register", body, config)
+      .post("https://destination-finder-server.eba-mr8nhntj.us-west-1.elasticbeanstalk.com/users/register", body, config)
       .then((res) =>
         dispatch({
           type: REGISTER_SUCCESS,
@@ -100,7 +100,7 @@ export const login =
     const body = JSON.stringify({ email, password });
 
     axios
-      .post("http://destination-finder-server.eba-mr8nhntj.us-west-1.elasticbeanstalk.com/users/login", body, config)
+      .post("https://destination-finder-server.eba-mr8nhntj.us-west-1.elasticbeanstalk.com/users/login", body, config)
       .then((res) =>
         dispatch({
           type: LOGIN_SUCCESS,
