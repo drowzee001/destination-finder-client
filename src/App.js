@@ -1,11 +1,9 @@
 import "./App.css";
 import Navigation from "./components/Navigation";
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
-  useHistory,
 } from "react-router-dom";
 import Search from "./pages/Search";
 import Login from "./pages/Login";
