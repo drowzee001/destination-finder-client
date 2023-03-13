@@ -12,7 +12,7 @@ export const getLocations = () => (dispatch, getState) => {
   dispatch(setLocationsLoading());
   const user_id = getState().auth.user.id;
   axios
-    .get(`https://destination-finder-server.herokuapp.com/locations/${user_id}`)
+    .get(`https://destination-finder-server.onrender.com/locations/${user_id}`)
     .then((res) =>
       dispatch({
         type: GET_LOCATIONS,
@@ -28,7 +28,7 @@ export const getLocation = (place_id) => (dispatch, getState) => {
   dispatch(setLocationsLoading());
   const user_id = getState().auth.user.id;
   axios
-    .get(`https://destination-finder-server.herokuapp.com/locations/${user_id}/${place_id}`)
+    .get(`https://destination-finder-server.onrender.com/locations/${user_id}/${place_id}`)
     .then((res) => {
       dispatch({
         type: GET_LOCATION,
@@ -59,7 +59,7 @@ export const addLocation = (place_id, image, name) => (dispatch, getState) => {
     config.headers["x-auth-token"] = token;
   }
   axios
-    .post("https://destination-finder-server.herokuapp.com/locations", location, config)
+    .post("https://destination-finder-server.onrender.com/locations", location, config)
     .then((res) =>
       dispatch({
         type: ADD_LOCATION,
@@ -87,7 +87,7 @@ export const deleteLocation = (id) => (dispatch, getState) => {
     config.headers["x-auth-token"] = token;
   }
   axios
-    .delete(`https://destination-finder-server.herokuapp.com/locations/${id}`, config)
+    .delete(`https://destination-finder-server.onrender.com/locations/${id}`, config)
     .then((res) => {
       dispatch({
         type: DELETE_LOCATION,
