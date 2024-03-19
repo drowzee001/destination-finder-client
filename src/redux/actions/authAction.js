@@ -31,7 +31,7 @@ export const loadUser = () => (dispatch, getState) => {
     config.headers["x-auth-token"] = token;
   }
   axios
-    .get("https://destination-finder-server.onrender.com/users", config)
+    .get("https://destination-finder-server.donovanrowzee.com/users", config)
     .then((res) => {
       dispatch({
         type: USER_LOADED,
