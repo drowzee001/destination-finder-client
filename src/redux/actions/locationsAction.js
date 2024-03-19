@@ -12,7 +12,7 @@ export const getLocations = () => (dispatch, getState) => {
   dispatch(setLocationsLoading());
   const user_id = getState().auth.user.id;
   axios
-    .get(`https://destination-finder-server.onrender.com/locations/${user_id}`)
+    .get(`https://destination-finder-server.donovanrowzee.com/locations/${user_id}`)
     .then((res) =>
       dispatch({
         type: GET_LOCATIONS,
